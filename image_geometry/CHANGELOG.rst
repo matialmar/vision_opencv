@@ -2,6 +2,40 @@
 Changelog for package image_geometry
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+1.16.2 (2022-10-03)
+-------------------
+* Add fovX and fovY functions in python, cpp, also some typo fixes (`#428 <https://github.com/ros-perception/vision_opencv/issues/428>`_)
+* Contributors: Chris Thierauf, Kenji Brameld
+
+1.16.1 (2022-09-06)
+-------------------
+
+1.16.0 (2021-11-23)
+-------------------
+* substituted missing sphinx extension (`#417 <https://github.com/ros-perception/vision_opencv/issues/417>`_)
+* Fix rectifyRoi when used with binning and/or ROI (`#378 <https://github.com/ros-perception/vision_opencv/issues/378>`_)
+* Implement unrectifyImage() (`#359 <https://github.com/ros-perception/vision_opencv/issues/359>`_)
+* Add equidistant distortion model (`#358 <https://github.com/ros-perception/vision_opencv/issues/358>`_)
+* Optimize includes (`#354 <https://github.com/ros-perception/vision_opencv/issues/354>`_)
+* Contributors: Markus Vieth, Martin Günther, Paddy
+
+1.15.0 (2020-05-19)
+-------------------
+
+1.14.0 (2020-04-06)
+-------------------
+* Noetic release (`#323 <https://github.com/ros-perception/vision_opencv/issues/323>`_)
+* update CMakeLists.txt for Windows build environment (`#265 <https://github.com/ros-perception/vision_opencv/issues/265>`_)
+* add DLL import/export macros (`#266 <https://github.com/ros-perception/vision_opencv/issues/266>`_)
+* Contributors: Alejandro Hernández Cordero, James Xu
+
+1.13.0 (2018-04-30)
+-------------------
+* Use rosdep OpenCV and not ROS one.
+  We defintely don't need the whole OpenCV.
+  We need to clean the rosdep keys.
+* Contributors: Vincent Rabaud
+
 1.12.8 (2018-04-17)
 -------------------
 * Merge pull request `#189 <https://github.com/ros-perception/vision_opencv/issues/189>`_ from ros2/python3_support_in_test
