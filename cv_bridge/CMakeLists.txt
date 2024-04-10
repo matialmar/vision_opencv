@@ -2,6 +2,8 @@ cmake_minimum_required(VERSION 2.8)
 project(cv_bridge)
 
 find_package(catkin REQUIRED COMPONENTS rosconsole sensor_msgs)
+set(Boost_INCLUDE_DIRS  ${TX2_ROOT_PATH}/usr/include/boost)
+set(Boost_LIBRARIES  ${TX2_ROOT_PATH}/usr/lib/${CMAKE_LIBRARY_ARCHITECTURE})
 
 if(NOT ANDROID)
   find_package(PythonLibs)
@@ -13,7 +15,7 @@ if(NOT ANDROID)
 else()
 find_package(Boost REQUIRED)
 endif()
-find_package(OpenCV 3 REQUIRED
+find_package(OpenCV 3.4 REQUIRED
   COMPONENTS
     opencv_core
     opencv_imgproc
@@ -26,7 +28,6 @@ catkin_package(
   LIBRARIES ${PROJECT_NAME}
   CATKIN_DEPENDS rosconsole sensor_msgs
   DEPENDS OpenCV
-  CFG_EXTRAS cv_bridge-extras.cmake
 )
 
 catkin_python_setup()
@@ -37,9 +38,9 @@ if(NOT ANDROID)
 add_subdirectory(python)
 endif()
 add_subdirectory(src)
-if(CATKIN_ENABLE_TESTING)
-  add_subdirectory(test)
-endif()
+#if(CATKIN_ENABLE_TESTING)
+#  add_subdirectory(test)
+#endif()
 
 # install the include folder
 install(

@@ -10,6 +10,8 @@ if(NOT ANDROID)
 # add a Boost Python library
 find_package(PythonInterp REQUIRED)
 find_package(PythonLibs "${PYTHON_VERSION_MAJOR}.${PYTHON_VERSION_MINOR}")
+set(Boost_INCLUDE_DIRS  ${TX2_ROOT_PATH}/usr/include/boost)
+set(Boost_LIBRARIES  ${TX2_ROOT_PATH}/usr/lib/${CMAKE_LIBRARY_ARCHITECTURE})
 
 #Get the numpy include directory from its python module
 if(NOT PYTHON_NUMPY_INCLUDE_DIR)
@@ -37,8 +39,7 @@ add_library(${PROJECT_NAME}_boost module.cpp module_opencv3.cpp)
 else()
 add_library(${PROJECT_NAME}_boost module.cpp module_opencv2.cpp)
 endif()
-target_link_libraries(${PROJECT_NAME}_boost ${Boost_LIBRARIES}
-                                            ${catkin_LIBRARIES}
+target_link_libraries(${PROJECT_NAME}_boost ${catkin_LIBRARIES}
                                             ${PYTHON_LIBRARIES}
                                             ${PROJECT_NAME}
 )
