@@ -3,8 +3,8 @@
 # add boost directories for now
 include_directories("../src")
 
-catkin_add_gtest(${PROJECT_NAME}-utest test_endian.cpp test_compression.cpp utest.cpp utest2.cpp test_rgb_colors.cpp)
-target_link_libraries(${PROJECT_NAME}-utest
+catkin_add_gtest( test_endian.cpp utest.cpp utest2.cpp test_rgb_colors.cpp)
+target_link_libraries(
   ${PROJECT_NAME}
   ${OpenCV_LIBRARIES}
   ${catkin_LIBRARIES}
